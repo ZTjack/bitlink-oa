@@ -40,11 +40,11 @@
 
       <div class="form-area">
         <div class="label-style">Graph:</div>
-        <el-input v-model="graph" size="mini" />
+        <el-input v-model="graph" size="mini" @blur="changeUrl" />
         <div class="label-style">Params:</div>
-        <el-input v-model="formParams" size="mini" />
+        <el-input v-model="formParams" size="mini" @blur="changeUrl" />
         <div class="label-style">Time:</div>
-        <el-input v-model="timeRange" size="mini" />
+        <el-input v-model="timeRange" size="mini" @blur="changeUrl" />
       </div>
 
       <el-divider class="horizontal-divider-style" />
@@ -61,7 +61,7 @@ import { Component, Vue } from "vue-property-decorator";
   name: "HomeView",
 })
 export default class HomeView extends Vue {
-  private graphPrefix = "//grafana.qbtrade.org/dashboard/db/";
+  private graphPrefix = "https://grafana.bitlink.capital";
 
   //grafana的主路径
   private mainPath = "";
